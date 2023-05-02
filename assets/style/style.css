@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian&display=swap');
+
+:root {
+    --font: 'Noto Serif Georgian', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+canvas {
+    width: 800;
+    height: 600;
+    background-image: url(https://i.postimg.cc/xC6qRjML/BG.png);
+    background-repeat: repeat-x;
+    background-size: cover;
+
+}
+
+#section1 {
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.756);
+    z-index: 200;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+}
+
+.header {
+    width: 100%;
+    height: 5rem;
+    background-color: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    flex-direction: row;
+}
+
+.shopmenu {
+    width: 500px;
+    height: 500px;
+    background-color: #101111d1;
+    background-image: linear-gradient(180deg, #101111b6 0%, #427160 100%);
+    border-radius: 10px;
+
+}
+
+.transition {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    transition: 0.5s;
+    opacity: 0;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.animated {
+    opacity: 1;
+}
+
+.card {
+    width: 200px;
+    height: 5rem;
+    border: 2px solid yellow;
+    cursor: pointer;
+    margin: 15px 0;
+}
+
+.guns {
+    width: 100%;
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
