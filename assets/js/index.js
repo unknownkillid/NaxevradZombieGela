@@ -882,15 +882,27 @@ function testing() {
 testing();
 
 const pistolPrice = 'ფასი: 200 გელა'
+const priceless = 'არიყიდება უნდა დაიმსახურო!'
 const priceDefault = 'ფასი:'
+const akPrice = 'ფასი: 2000 გელა'
 
 const pistolCard = document.getElementById('pistol') 
 const price = document.getElementById('price')
 const cards = document.querySelectorAll('.card')
+const uziCard = document.getElementById('uzicard')
+const akCard = document.getElementById('AKcard')
 
 
     pistolCard.addEventListener('mouseover', () => {
         price.textContent = pistolPrice
+    })
+
+    akCard.addEventListener('mouseover', () => {
+        price.textContent = akPrice
+    })
+
+    uziCard.addEventListener('mouseover', () => {
+        price.textContent = priceless
     })
 
 
