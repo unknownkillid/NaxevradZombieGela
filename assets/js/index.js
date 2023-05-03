@@ -327,12 +327,32 @@ class Door {
     }
 }
 
+class Impala {
+    constructor({x, y, impala, width, height}) {
+        this.position = {
+            x,
+            y
+        }
+
+
+        this.width = width
+        this.height = height
+        this.impala = impala
+    }
+
+    draw() {
+        ctx.drawImage(this.impala, this.position.x, this.position.y, this.width, this.height)
+    }
+}
 
 
 let angle = 2
 
 const door = new Image()
 door.src = ''
+
+const impala = new Image()
+impala.src = './assets/impala.png'
 
 const tavern = new Image()
 tavern.src = './assets/asset/houseAssets/Building/Untitled-2.png'
@@ -362,6 +382,12 @@ const player = new Player()
 const welcomeText = ''
 const cafeText = 'უზის დუქანი'
 
+
+
+//impala 
+const impalas = [
+    new Impala({ x: 5300, y: 6000, impala, width: 300, height: 150 })
+]
 
 //hidden doors
 const doors = [
@@ -435,6 +461,9 @@ const platforms = [
     , new Platform({
         x: 4900, y: window.innerHeight - player.height + 51, image, width: 700, height: 100
     })
+    , new Platform({
+        x: 5600, y: window.innerHeight - player.height + 51, image, width: 700, height: 100
+    })
 
 ]
 const keys = {
@@ -455,6 +484,13 @@ function updateTavern(tavern, { x, y, width, height }) {
     tavern.position.y = y
     tavern.width = width
     tavern.height = height
+}
+
+function updateImpala(impala, { x, y, width, height }) {
+    impala.position.x = x
+    impala.position.y = y
+    impala.width = width
+    impala.height = height
 }
 
 function updatePlatform(platform, { x, y, width, height }) {
@@ -492,6 +528,10 @@ function animate(currentTime) {
                 length = 30;
             }
             trap.draw();
+        })
+
+        impalas.forEach(impala => {
+            impala.draw();
         })
 
         desks.forEach(desk => {
@@ -535,6 +575,8 @@ function animate(currentTime) {
         const tavern = cafes[0]
         const platformWidth = platforms[0]
         const doorTavern = doors[0]
+        const impalaPosition = impalas[0]
+        const platform8 = platforms[8]
 
         const transition = document.getElementById('transition')
 
@@ -555,6 +597,8 @@ function animate(currentTime) {
                     setTimeout(() => {
                         updateTavern(myTavern, { x: tavern.position.x, y: window.innerHeight - platformWidth.width + 30, width: 1000, height: 600 })
                         doorTavern.position.y = window.innerHeight + 1000;
+                        updateImpala(impalaPosition, { x: impalaPosition.position.x, y: window.innerHeight - platform8.height - 147, width: 300, height: 150})
+                        updatePlatform(platform8, { x: platform8.position.x, y: window.innerHeight - player.height + 51, width: 700, height: 100})
                         console.log(player.position.y + "player", npc.position.y + "npc")
                         npc.position.y = window.innerHeight - 280;
                         offset = 0;
@@ -583,6 +627,10 @@ function animate(currentTime) {
 
         if (keys.right.pressed && offset < 3000) {
             offset += 5;
+            //impala move 
+            impalas.forEach(impala => {
+                impala.position.x -= 7;
+            })
             //npc move
             npc.position.x -= 7;
             //platforms move
@@ -662,6 +710,9 @@ function animate(currentTime) {
             })
             doors.forEach(door => {
                 door.position.x += 7
+            })
+            impalas.forEach(impala => {
+                impala.position.x += 7;
             })
         }
 

@@ -8,6 +8,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
 body {
@@ -84,6 +87,7 @@ canvas {
     align-items: center;
     justify-content: center;
     transition: 0.6s;
+    border-radius: 7px;
 }
 
 .guns {
@@ -115,4 +119,23 @@ canvas {
 
 .card:hover {
     transform: scale(110%);
+}
+
+.cardclassadd {
+    animation: shake 1s forwards;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotateZ(2deg);
+    }
+    25% {
+        transform: rotateZ(-2deg);
+    }
+    50% {
+        transform: rotateZ(2deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+    }
 }
