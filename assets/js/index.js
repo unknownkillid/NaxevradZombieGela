@@ -45,11 +45,11 @@ const interval = setInterval(() => {
     i++;
     if (i >= length) {
         i = 0;
-    } if (sprite[i].complete) {
-        ctx.drawImage(sprite[i], 100, 100, 100, 100);
     }
 }, 40);
 
+
+ctx.imageSmoothingEnabled = true;
 
 let npcIdle = './assets/character/weapon_seller_NPC/frame'
 
@@ -71,7 +71,7 @@ const interval2 = setInterval(() => {
     if (n >= length2) {
         n = 1;
     }
-    ctx.drawImage(sprite2[n], 100, 100, 100, 100);
+    
 
 }, 100);
 // 4800
@@ -465,9 +465,10 @@ function updatePlatform(platform, { x, y, width, height }) {
 }
 
 let lastFrameTime = 0;
-let fps = 80;
+let fps = 90;
 
 function animate(currentTime) { 
+    
     requestAnimationFrame(animate);
 
     const elapsed = currentTime - lastFrameTime;
