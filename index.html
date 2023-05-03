@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/style/style.css">
-    <link rel="icon" type="image/jpg" href="assets/character/playerCharacter/TransparentPNG/idle/skeleton-idle_0.png"/>
+    <link rel="icon" type="image/jpg" href="assets/logo.png"/>
 </head>
 
 <body>
@@ -18,14 +18,17 @@
     <section id="section1">
         <div class="shopmenu">
             <div class="header">
-                <h2 class="money">{{Money}}</h2>
-                <button id="xButton">X</button>
+               <div style="display: flex; align-items: center; justify-content: center;"><img src="assets/lariicon.png" alt=""><h2 class="money" id="money"> : 0</h2></div>
+                <button id="xButton" class="xBtn" style="width: 30px; height: 30px; ">X</button>
             </div>
 
             <div class="guns">
+                <div class="card pistol1" id="pistol">
+                    <img src="assets/PistolNpc.png" width="100px" alt="">
+                </div>
                 <div class="card"></div>
                 <div class="card"></div>
-                <div class="card"></div>
+                <h1 class="price" id="price">ფასი: </h1>
             </div>
 
         </div>

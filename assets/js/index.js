@@ -830,3 +830,21 @@ function testing() {
 
 testing();
 
+const pistolPrice = 'ფასი: 200 გელა'
+const priceDefault = 'ფასი:'
+
+const pistolCard = document.getElementById('pistol') 
+const price = document.getElementById('price')
+const cards = document.querySelectorAll('.card')
+
+
+    pistolCard.addEventListener('mouseover', () => {
+        price.textContent = pistolPrice
+    })
+
+
+cards.forEach(card => {
+    card.addEventListener('mouseleave', () => {
+        price.textContent = priceDefault
+    })
+})
