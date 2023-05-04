@@ -5,34 +5,124 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ზომბაგედონი</title>
     <link rel="stylesheet" href="assets/style/style.css">
-    <link rel="icon" type="image/jpg" href="assets/logo.png"/>
+    <link rel="icon" type="image/jpg" href="assets/logo.png" />
 </head>
 
 <body>
     <canvas id="canvas"></canvas>
-<link rel="stylesheet" href="assets/impala.png">
+    <link rel="stylesheet" href="assets/snoopy.png">
+
+    <section class="starting" id="starting">
+        <p class="startingParagraph">
+            სად ვარ?! არაფერი მახსოვს...
+            <br> ჩემი სახელია... ჩემი სახელია ლუკა
+            <br> აქ როგორ მოვხვდი?!
+        </p>
+        <button class="nexButton" id="epilogueButton">გაგრძელება</button>
+    </section>
 
     <!-- gunshop menu -->
     <section id="section1">
         <div class="shopmenu">
             <div class="header">
-               <div style="display: flex; align-items: center; justify-content: center;"><img src="assets/lariicon.png" alt=""><h2 class="money" id="money"> : 0</h2></div>
+                <div style="display: flex; align-items: center; justify-content: center;"><img src="assets/lariicon.png"
+                        alt="">
+                    <h2 class="money" id="money"> : 0</h2>
+                </div>
                 <button id="xButton" class="xBtn" style="width: 30px; height: 30px; ">X</button>
             </div>
 
+            
+
+            <div class="dialugue1 frame" id="dialogue1">
+                <img src="assets/character/weapon_seller_NPC/frame1.png" width="150px" alt="">
+                <p>ვინ ჯანდაბა ხარ და აქ როგორ შემოხვედი?!</p>
+                <button class="answer" id="answer">გაგრძელება</button>
+            </div>
+
+            <div class="answer1 frame" id="dialogue2">
+                <img src="assets/character/playerCharacter/TransparentPNG/idle/skeleton-idle_0.png" width="80px" alt="">
+                <p>არ ვიცი რახდება. გონს ტყეში მოვედი და გზას რომ გამოვყევი აქ მოვხვდი მეგონა აქ არავინ ცხოვრობდა ბოდიში რომ შემოვიჭერი შეგიძლიათ ამიხსნათ რახდება?</p>
+                <button class="answer" id="answer2btn">გაგრძელება</button>
+            </div>
+
+            <div class="areYouOkay frame" id="dialogue3">
+                <img src="assets/character/weapon_seller_NPC/frame1.png" width="150px" alt="">
+                <p>გიკბინეს?? ვინმემ გიკბინა?? სისხლი მოგდის?? იცოდე თუ დამიმალავ... თუ ნაკბენი გაქვს არც დავფიქრდები ისე გესვრი!!!</p>
+                <button class="answer" id="answer3btn">გაგრძელება</button>
+            </div>
+            <div class="crazy frame" id="dialogue4">
+                <img src="assets/character/playerCharacter/TransparentPNG/idle/skeleton-idle_0.png" width="80px" alt="">
+                <p>სერიოზულად??? გიჟი ხარ? რა ნაკბენი ვის უნდა ეკბინა? მეღადავები?</p>
+                <button class="answer" id="answer4btn">გაგრძელება</button>
+            </div>
+
+            <div class="really frame" id="dialogue5">
+                <img src="assets/character/weapon_seller_NPC/frame1.png" width="150px" alt="">
+                <p>ესეიგი შენ ამბობ რომ არსაიდან მოხვედი და საერთოდ გონზე არ ხარ გარეთ რახდება? ჯანდაბა ძმაო... ეს... არც კი ვიცი როგორ აგიხსნა</p>
+                <button class="answer" id="answer5btn">გაგრძელება</button>
+            </div>
+
+            <div class="memory frame" id="dialogue6">
+                <img src="assets/character/playerCharacter/TransparentPNG/idle/skeleton-idle_0.png" width="80px" alt="">
+                <p>დამიჯერე არაფერი მახსოვს უბრალოდ გავიღვიძე და აქ შემთხვევით აღმოვჩნდი აღარ იტყვი რაჯანდაბა ხდება?</p>
+                <button class="answer" id="answer6btn">გაგრძელება</button>
+            </div>
+
+            <div class="story frame" id="dialogue7">
+                <img src="assets/character/weapon_seller_NPC/frame1.png" width="150px" alt="">
+                <p>რამდენიმე თვის წინ განგაშის სიგნალი ჩაირთო... ყველა გარბოდა, შემდეგ დავინახე რომ ყველა გაგიჟდა ადამიანები ერთმანეთს ჭამდნენ ყველამ ადამიანური სახე დაკარგა. ყველა ცდილობდა გადარჩენას და ახლა აქ ვართ. მტკიცებულებაც მაქვს მოდი გაჩვენებ.</p>
+                <button class="answer" id="answer7btn">გაგრძელება</button>
+            </div>
+
+            <div class="zombieCage frame" id="dialogue8">
+                <img src="assets/zombiecage.png" width="250px" alt="">
+                <p>ჰუუუუუუუაააააააააა გუგუუუუუ გაგააააააა გაგაააააა გუგუუუუუუუუ</p>
+                <button class="answer" id="answer8btn">გაგრძელება</button>
+            </div>
+
+            <div class="wow frame" id="dialogue9">
+                <img src="assets/character/playerCharacter/TransparentPNG/idle/skeleton-idle_0.png" width="80px" alt="">
+                <p>ეს რა არის?? მანიაკი ხარ! არ მჯერა რომ ეს ხდება. ეს არ ხდება!! არ ხდება !! არ ხდება !!</p>
+                <button class="answer" id="answer9btn">გაგრძელება</button>
+            </div>
+
+            <div class="quest frame" id="dialogue10">
+                <img src="assets/character/weapon_seller_NPC/frame1.png" width="150px" alt="">
+                <p>კიი მეგობაროო ხდება... სამწუხაროდ ხდება. მოდი შევთანხმდეთ მე იარაღს მოგცემ დამიჯერე გამოგადგება. მაგრამ ამის სანაცვლოდ რაღაც უნდა მომიტანო.</p>
+                <button class="answer" id="answer10btn">გაგრძელება</button>
+            </div>
+
+            <div class="accept frame" id="dialogue11">
+                <img src="assets/character/playerCharacter/TransparentPNG/idle/skeleton-idle_0.png" width="80px" alt="">
+                <p>კარგი მითხარი რა გჭირდება</p>
+                <button class="answer" id="answer11btn">გაგრძელება</button>
+            </div>
+
+            <div class="album frame" id="dialogue12">
+                <img src="assets/character/weapon_seller_NPC/frame1.png" width="150px" alt="">
+                <p>აქვე ახლოს მიტოვებული სახლია დანგრეული თეთრი ფერის. მინდა რომ მაგ სახლიდან რაღაც ნივთი წამომიღო რომელიც მისაღებ ოთახში მაგიდაზე დევს ჩემთვის ძალიან ძვირფასია ამის სანაცვლოდ იარაღს და ჩემს ნდობას მოიპოვებ!</p>
+                <button class="answer" id="answer12btn">დავალების აღება</button>
+            </div>
+            <div class="back frame" id="dialogue13">
+                <img src="assets/character/weapon_seller_NPC/frame1.png" width="150px" alt="">
+                <p>ვაააა მოიტანე?</p>
+                <button class="answer" id="answer13btn">ნივთის მიცემა</button>
+            </div>
+
             <div class="guns">
-                <div class="card pistol1" id="pistol">
-                    <img src="assets/PistolNpc.png" width="100px" alt="">
-                </div>
-                <div class="card" id="AKcard">
-                    <img src="assets/AK47.png" width="180px" alt="">
-                </div>
-                <div class="card" id="uzicard">
-                    <img src="assets/uziNPC.png" width="60px" alt="">
-                </div>
-                <h1 class="price" id="price">ფასი: </h1>
+                    <div class="card pistol1" id="pistol">
+                        <img src="assets/PistolNpc.png" width="100px" alt="">
+                    </div>
+                    <div class="card" id="AKcard">
+                        <img src="assets/AK47.png" width="180px" alt="">
+                    </div>
+                    <div class="card" id="uzicard">
+                        <img src="assets/uziNPC.png" width="60px" alt="">
+                    </div>
+                    <h1 class="price" id="price">ფასი: </h1>
             </div>
 
         </div>
