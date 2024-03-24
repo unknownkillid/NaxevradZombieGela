@@ -137,6 +137,8 @@ class Player {
     jump() {
         if (!isJumping && this.velocity.y === 0) {
             this.velocity.y = -25;
+            // jumpSound.play();
+            // jumpSound.loop = false;
         }
     }
 }
@@ -633,13 +635,14 @@ function animate(currentTime) {
             if (player.position.x < door.position.x + door.width &&
                 player.position.x + player.width - 10 > door.position.x &&
                 player.position.y < door.position.y + door.height &&
-                player.position.y + player.height - 10 > door.position.y) {
-                if (!hasEnteredTavern) {
+                player.position.y + player.height - 10 > door.position.y && !hasEnteredTavern) {
                     hasEnteredTavern = true;
                     transition.style.display = "flex"
 
                     setTimeout(() => {
                         transition.classList.add('animated')
+                        offset = 0;
+
                     }, 50);
 
                     setTimeout(() => {
@@ -649,7 +652,6 @@ function animate(currentTime) {
                         updatePlatform(platform8, { x: platform8.position.x, y: window.innerHeight - player.height + 51, width: 700, height: 100})
                         snoopDogg.position.y = window.innerHeight - 235;
                         npc.position.y = window.innerHeight - 280;
-                        offset = 0;
                         player.velocity.x = 0;
                         player.position.x < tavern.width
                     }, 700);
@@ -659,7 +661,7 @@ function animate(currentTime) {
                     setTimeout(() => {
                         transition.style.display = "none";
                     }, 1000);
-                }
+                
             }
 
             door.draw();
@@ -844,18 +846,18 @@ function diedCantMove() {
         addEventListener('keydown', ({ keyCode }) => {
             switch (keyCode) {
                 case 68:
-                    keys.right.pressed = false;
+                    player.velocity.x = 0
                     for (var i = 0; i < sprite.length; i++) {
                         sprite[i] = new Image();
                         sprite[i].src = die + i.toString() + '.png'
                     }
                     break;
                 case 65:
+                    player.velocity.x = 0
                     for (var i = 0; i < sprite.length; i++) {
                         sprite[i] = new Image();
                         sprite[i].src = die + i.toString() + '.png'
                     }
-                    keys.left.pressed = false;
                     break;
             }
         })
